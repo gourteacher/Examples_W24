@@ -2,4 +2,6 @@
     <string name="app_name">Examples- View Binding</string>
     <string name="name">Name</string>
     <string name="submit_btn">Submit</string>
+    <string name="img_clicked_msg">You clicked the image</string>
+    <string name="hello_msg">Hello World!</string>
 </resources>
