@@ -1,15 +1,5 @@
 <resources>
-    <string name="app_name">Examples-Linear Layout</string>
-    <string name="hello_world">Hello World!</string>
-    <string name="click_me">Click on me</string>
-    <string name="text">This is a textView</string>
-    <string name="edit">This is an editText</string>
-    <string name="btn">This is a button</string>
-    <string name="cbox">This is a checkbox</string>
-    <string name="button_clicked">You clicked the button!</string>
-    <string name="image_clicked">You clicked the image!</string>
-    <string name="snackbar_message">This is a snackbar</string>
-    <string name="toast_message">This is a toast</string>
-    <string name="box_on">Box is on</string>
-    <string name="box_off">Box is off</string>
+    <string name="app_name">Examples- View Binding</string>
+    <string name="name">Name</string>
+    <string name="submit_btn">Submit</string>
 </resources>
