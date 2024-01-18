@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.college.examples.R;
 import com.college.examples.data.MainViewModel;
 import com.college.examples.databinding.ActivityMainBinding;
 
@@ -24,9 +23,5 @@ public class MainActivity extends AppCompatActivity {
         //this is the only function call, loads stuff onto screen
         setContentView(binding.getRoot());
 
-        binding.myImageButton.setOnClickListener(clik -> {
-            binding.myTextView.setText(R.string.img_clicked_msg);
-
-        });
     }
 }

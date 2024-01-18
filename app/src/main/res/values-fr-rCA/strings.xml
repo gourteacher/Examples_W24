@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Exemples- View Binding</string>
-    <string name="name">Nom</string>
-    <string name="submit_btn">Soumettre</string>
-    <string name="img_clicked_msg">Vous avez cliqué l\'image</string>
-    <string name="hello_msg">Bonjour</string>
+    <string name="button_text">Je suis un bouton</string>
+    <string name="editMessage">Je suis un edit text</string>
 </resources>
