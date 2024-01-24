@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.college.examples.R;
 import com.college.examples.data.MainViewModel;
 import com.college.examples.databinding.ActivityMainBinding;
 
@@ -24,9 +23,29 @@ public class MainActivity extends AppCompatActivity {
         //this is the only function call, loads stuff onto screen
         setContentView(binding.getRoot());
 
-        binding.myImageButton.setOnClickListener(clik -> {
-            binding.myTextView.setText(R.string.img_clicked_msg);
+        binding.checkBox.setOnCheckedChangeListener(   (button, isChecked) -> {
+            viewModel.checkBoxIsSelected.postValue(isChecked);
+        } );
 
+        binding.radioButton.setOnCheckedChangeListener(   (button, isChecked) -> {
+            viewModel.radioIsSelected.postValue(isChecked);
+        } );
+
+        binding.mySwitch.setOnCheckedChangeListener(   (button, isChecked) -> {
+            viewModel.switchIsSelected.postValue(isChecked);
+        } );
+
+        viewModel.checkBoxIsSelected.observe(this, selected -> {
+            binding.checkBox.setChecked(selected);
         });
+
+        viewModel.radioIsSelected.observe(this, selected -> {
+            binding.radioButton.setChecked(selected);
+        });
+
+        viewModel.switchIsSelected.observe(this, selected -> {
+            binding.mySwitch.setChecked(selected);
+        });
+
     }
 }

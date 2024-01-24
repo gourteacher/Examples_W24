@@ -6,7 +6,10 @@ import androidx.lifecycle.ViewModel;
 //data survives rotation changes
 public class MainViewModel extends ViewModel {
 
-    //observe this object:
-    public MutableLiveData<String> userString = new MutableLiveData("");
-    public MutableLiveData<Boolean> onOrOff = new MutableLiveData<>(false);
+    //survive orientation changes
+    public MutableLiveData< Boolean > radioIsSelected = new MutableLiveData<>();
+
+    public MutableLiveData< Boolean > checkBoxIsSelected = new MutableLiveData<>();
+
+    public MutableLiveData< Boolean > switchIsSelected = new MutableLiveData<>();
 }
