@@ -14,11 +14,13 @@ import java.io.File;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
 
     //same as public static void main(String args[])
     @Override //app starts here
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.i(TAG, "In onCreate");
 
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         //this is the only function call, loads stuff onto screen
@@ -55,19 +57,6 @@ public class MainActivity extends AppCompatActivity {
             editor.putFloat("Age", 34.56f);
             editor.apply(); //send to disk
 
-
-
-            /*        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.CAMERA)
-                    == PackageManager.PERMISSION_GRANTED) {
-                startActivity(cameraIntent);//this will go to a new page
-            }
-            else {
-                requestPermissions( new String[] {android.Manifest.permission.CAMERA}, 0);
-            }
-
-             */
         } );
     }
 
@@ -75,32 +64,33 @@ public class MainActivity extends AppCompatActivity {
     @Override //app is visible
     protected void onStart() {
         super.onStart();
-        Log.i("MainActivity", "HIt onStart");
+        Log.i(TAG, "In onStart");
     }
 
     @Override  // app now responds to clicks
     protected void onResume() {
         super.onResume();
 
-        Log.e("MainActivity", "HIt onResume");
+        Log.i(TAG, "In onResume");
     }
 
     @Override //opposite to onResume, no longer getting clicks
     protected void onPause() {
         super.onPause();
 
-        Log.e("MainActivity", "HIt onPause");
+        Log.i(TAG, "In onPause");
     }
     @Override//no longer visible
     protected void onStop() {
         super.onStop();
 
-        Log.e("MainActivity", "HIt onStop");
+        Log.i(TAG, "In onStop");
     }
 
 
     @Override //been garbage collected
     protected void onDestroy() {
+        Log.i(TAG, "In onDestroy");
         super.onDestroy();
     }
 }

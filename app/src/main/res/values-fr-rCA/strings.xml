@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Exemples- View Binding</string>
-    <string name="button_text">Je suis un bouton</string>
-    <string name="editMessage">Je suis un edit text</string>
+    <string name="enter_email_address">Taper votre adresse couriel:</string>
+    <string name="login_button">Connexion</string>
+    <string name="email_hint">Courriel</string>
+    <string name="second_activity_title">Seconde Activité</string>
 </resources>

@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Examples- View Binding</string>
-    <string name="button_text">I\'m a button</string>
-    <string name="editMessage">I\'m an edit text</string>
+    <string name="app_name">Examples - Actvity Lifecycle</string>
+    <string name="enter_email_address">Type in your email address:</string>
+    <string name="login_button">Login</string>
+    <string name="email_hint">Email</string>
+    <string name="second_activity_title">Second Activity</string>
 </resources>
