@@ -21,12 +21,13 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        binding.resultTv.setText(model.mySaved);
         binding.computeButton.setOnClickListener(c -> {
             String userInput = binding.userInputId.getText().toString();
-            model.mySaved = userInput;
-            binding.resultTv.setText(userInput);
+            model.mySaved.postValue(userInput);
         });
 
+        model.mySaved.observe(this, s -> {
+            binding.resultTv.setText(s);
+        });
     }
 }
