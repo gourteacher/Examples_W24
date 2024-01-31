@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Examples - Actvity Lifecycle</string>
-    <string name="enter_email_address">Type in your email address:</string>
-    <string name="login_button">Login</string>
-    <string name="email_hint">Email</string>
-    <string name="second_activity_title">Second Activity</string>
-    <string name="back_button">Back</string>
+    <string name="app_name">Examples - Implicit Intents</string>
+    <string name="finish">Finish</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+
+    <string name="sendEmail">Send an email</string>
+    <string name="viewURL">Go to a URL</string>
+    <string name="call">Make a phone call</string>
 </resources>

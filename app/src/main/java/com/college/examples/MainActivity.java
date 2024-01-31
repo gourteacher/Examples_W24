@@ -1,75 +1,68 @@
 package com.college.examples;
 
+import static android.Manifest.permission.CALL_PHONE;
+
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.college.examples.databinding.ActivityMainBinding;
-
+import androidx.core.content.ContextCompat;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
-    public static final String EMAIL_KEY = "EmailAddress";
-
-    //same as public static void main(String args[])
-    @Override //app starts here
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.i(TAG, "In onCreate");
+        setContentView(R.layout.activity_main);
 
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        //this is the only function call, loads stuff onto screen
-        setContentView(binding.getRoot());
+        //This shows how to use Android's default email app to send an email:
+        Button temp = findViewById(R.id.sendEmailExample);
+        temp.setOnClickListener(click ->{
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"email@example.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "subject here");
+            intent.putExtra(Intent.EXTRA_TEXT, "body text");
+            startActivity(intent);
 
-        binding.loginButton.setOnClickListener( click->{
+        });
 
-            //do this when clicked:
-            Intent newPage = new Intent(MainActivity.this, SecondActivity.class);
-            String userInput =  binding.emailField.getText().toString();
-            newPage.putExtra(EMAIL_KEY,userInput); //go to next page
-            startActivity(newPage);
-        } );
-    }
+        //This shows how to use Android's default web view app to view a web page:
+        temp = findViewById(R.id.viewURL);
+        temp.setOnClickListener( click -> {
+
+            String url = "http://www.algonquincollege.com";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData( Uri.parse(url) );
+            startActivity(i);
+
+        });
+
+        //This shows how to use Android's default web view app to view a web page:
+        temp = findViewById(R.id.makePhoneCall);
+        try {
+            temp.setOnClickListener(click -> {
+                String url = "tel:" + "6137274700";
+                Intent i = new Intent(Intent.ACTION_CALL);
+                i.setData(Uri.parse(url));
+
+                if (ContextCompat.checkSelfPermission(getApplicationContext(), CALL_PHONE)
+                        == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(i);
+                } else {
+                    requestPermissions(new String[]{CALL_PHONE}, 1);
+                }
+            });
+        } catch (SecurityException se) {
+            se.printStackTrace();
+        }
 
 
-    @Override //app is visible
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG, "In onStart");
-    }
-
-    @Override  // app now responds to clicks
-    protected void onResume() {
-        super.onResume();
-
-        Log.i(TAG, "In onResume");
-    }
-
-    @Override //opposite to onResume, no longer getting clicks
-    protected void onPause() {
-        super.onPause();
-
-        Log.i(TAG, "In onPause");
-    }
-    @Override//no longer visible
-    protected void onStop() {
-        super.onStop();
-
-        Log.i(TAG, "In onStop");
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG, "In onRestart");
-    }
-
-    @Override //been garbage collected
-    protected void onDestroy() {
-        Log.i(TAG, "In onDestroy");
-        super.onDestroy();
+        Button term = findViewById( R.id.intent_return_button);
+        term.setOnClickListener(  click ->  { finish(); } );
     }
 }
