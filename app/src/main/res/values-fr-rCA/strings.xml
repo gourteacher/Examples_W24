@@ -5,4 +5,5 @@
     <string name="login_button">Connexion</string>
     <string name="email_hint">Courriel</string>
     <string name="second_activity_title">Seconde Activité</string>
+    <string name="back_button">Retour</string>
 </resources>

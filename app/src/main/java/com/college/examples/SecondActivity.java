@@ -25,5 +25,9 @@ public class SecondActivity extends AppCompatActivity {
 
         binding.secondEmail.setText(receivedEmail);
 
+        binding.backButton.setOnClickListener( click -> {
+            finish();
+        });
+
     }
 }

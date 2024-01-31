@@ -4,4 +4,5 @@
     <string name="login_button">Login</string>
     <string name="email_hint">Email</string>
     <string name="second_activity_title">Second Activity</string>
+    <string name="back_button">Back</string>
 </resources>
