@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "In onStop");
     }
 
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i(TAG, "In onRestart");
+    }
 
     @Override //been garbage collected
     protected void onDestroy() {
