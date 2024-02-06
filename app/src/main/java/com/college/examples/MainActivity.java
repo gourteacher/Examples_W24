@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
             if(containsUpperAndLowerCase(userInput)){
                 binding.responseText.setText(R.string.upper_lower_case_msg);
             }
+            else if(containsNumber(userInput)){
+                binding.responseText.setText(R.string.number_msg);
+            }
             else binding.responseText.setText(R.string.not_complex_msg);
         });
      }
@@ -49,5 +52,25 @@ public class MainActivity extends AppCompatActivity {
         }
         //after looked at every character
         return foundLower && foundUpper;
+    }
+
+    /** This function checks str and returns true if str
+     * has a number in it
+     * @param str - an unused parameter
+     *
+     * @return Returns true if str has a digit, otherwise false
+     */
+    boolean containsNumber( String str){
+        boolean foundNumber = false;
+
+        for(int i = 0; i < str.length(); i++)
+        {
+            //get each character in the string:
+            char c = str.charAt(i);
+            if(Character.isDigit(c))
+                foundNumber = true;
+        }
+        //after looked at every character
+        return foundNumber;
     }
 }

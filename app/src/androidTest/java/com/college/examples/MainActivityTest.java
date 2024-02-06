@@ -33,28 +33,9 @@ public class MainActivityTest {
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
-    @Test
-    public void testLowerCase(){
-        try {
-            Thread.sleep(500);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        ViewInteraction appCompatEditText = onView(withId(R.id.passwordText));
-        appCompatEditText.perform(click());
-        appCompatEditText.perform(replaceText("alphanum"), closeSoftKeyboard());
-
-        //click the button:
-        ViewInteraction materialButton = onView(withId(R.id.loginButton));
-        materialButton.perform( click() ); /// clicks the button
-
-        ViewInteraction textView = onView(withId(R.id.responseText));
-        textView.check(matches(withText("Your password is not complex enough")));
-    }
 
     @Test
-    public void mainActivityTest() {
+    public void mainActivityTestCharacter() {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
@@ -65,7 +46,7 @@ public class MainActivityTest {
         }
 
         ViewInteraction appCompatEditText = onView(withId(R.id.passwordText));
-        appCompatEditText.perform(click());
+
         appCompatEditText.perform(replaceText("alphamaD"), closeSoftKeyboard());
 
         ViewInteraction materialButton = onView(withId(R.id.loginButton));
@@ -73,9 +54,31 @@ public class MainActivityTest {
 
 
         ViewInteraction textView = onView(withId(R.id.responseText));
-        textView.check(matches(withText("Your password has upper and lower case")));
+        textView.check(matches(withText(R.string.upper_lower_case_msg)));
     }
 
+    @Test
+    public void mainActivityTestNumber() {
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        ViewInteraction appCompatEditText = onView(withId(R.id.passwordText));
+
+        appCompatEditText.perform(replaceText("alpham123"), closeSoftKeyboard());
+
+        ViewInteraction materialButton = onView(withId(R.id.loginButton));
+        materialButton.perform(click());
+
+
+        ViewInteraction textView = onView(withId(R.id.responseText));
+        textView.check(matches(withText(R.string.number_msg)));
+    }
 
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
