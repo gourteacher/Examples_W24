@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Examples</string>
-    <string name="hello">Hello World</string>
+    <string name="app_name">Examples - Unit Test</string>
+    <string name="upper_lower_case_msg">Your password has upper and lower case</string>
+    <string name="number_msg">Your password has a number</string>
+    <string name="not_complex_msg">Your password is not complex enough</string>
+    <string name="type_password_hint">Type in your password</string>
+    <string name="login_btn">Login</string>
+
 </resources>
