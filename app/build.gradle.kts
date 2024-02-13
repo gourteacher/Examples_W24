@@ -42,7 +42,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
 /*
     implementation(fileTree(mapOf(
-        "dir" to "/Users/gouraya/Library/Android/sdk/platforms/android-34",
+        "dir" to "/HOME/Android/sdk/platforms/android-34",
         "include" to listOf("*.aar", "*.jar"),
         "exclude" to listOf("")
     )))
