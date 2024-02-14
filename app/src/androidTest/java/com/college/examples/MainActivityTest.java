@@ -9,6 +9,8 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 
+import com.college.examples.ui.ChatRoom;
+
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
@@ -21,8 +23,8 @@ import org.junit.runner.RunWith;
 public class MainActivityTest {
 
     @Rule
-    public ActivityScenarioRule<com.college.examples.ui.MainActivity> mActivityScenarioRule =
-            new ActivityScenarioRule<>(com.college.examples.ui.MainActivity.class);
+    public ActivityScenarioRule<ChatRoom> mActivityScenarioRule =
+            new ActivityScenarioRule<>(ChatRoom.class);
 
 
     @Test

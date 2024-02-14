@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">Examples</string>
-    <string name="login">Login</string>
-    <string name="type_in_your_password">Type in your password</string>
-    <string name="add_something">Add something</string>
-    <string name="name">Name</string>
-    <string name="message_goes_here">Message goes here</string>
-    <string name="time_goes_here">Time goes here</string>
+    <string name="app_name">Examples - RecyclerView</string>
+    <string name="msg_text">Message goes here</string>
+    <string name="msg_time">Time goes here</string>
+    <string name="btn_submit">Send</string>
+    <string name="hint_message">Enter your message</string>
+    <string name="sb_item_click">You clicked on item</string>
+    <string name="sb_action">Delete</string>
 
 </resources>

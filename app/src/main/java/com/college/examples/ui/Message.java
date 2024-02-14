@@ -3,19 +3,18 @@ package com.college.examples.ui;
 public class Message {
 
     private String message;
-    private boolean isSent;
-
-    public Message(String message, boolean isSent) {
+    private String timeSent;
+    public Message(String message, String timeSent) {
         this.message = message;
-        this.isSent = isSent;
+        this.timeSent = timeSent;
     }
 
     public String getMessage() {
         return message;
     }
 
-    public boolean isSent() {
-        return isSent;
+    public String getTimeSent() {
+        return timeSent;
     }
 
     @Override
