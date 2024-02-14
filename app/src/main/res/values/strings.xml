@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Examples</string>
-    <string name="welcome_msg">Hello World</string>
-
+    <string name="login">Login</string>
+    <string name="type_in_your_password">Type in your password</string>
+    <string name="add_something">Add something</string>
+    <string name="name">Name</string>
+    <string name="message_goes_here">Message goes here</string>
+    <string name="time_goes_here">Time goes here</string>
 
 </resources>
