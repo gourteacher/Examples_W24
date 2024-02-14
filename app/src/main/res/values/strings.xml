@@ -1,12 +1,8 @@
 <resources>
-    <string name="app_name">Examples - ListView with Dialog</string>
+    <string name="app_name">Examples - ListView with FAB</string>
     <string name="send">Send</string>
-    <string name="enter_your_message">Enter your message</string>
-    <string name="message_goes_here">Message goes here</string>
-    <string name="time_goes_here">Time goes here</string>
-    <string name="alert_title">Make a choice</string>
-    <string name="alert_message">Do you want to add a row?</string>
-    <string name="alert_positive">Yes</string>
-    <string name="alert_negative">No</string>
-    <string name="alert_neutral">Maybe</string>
+    <string name="dialog_remove_item">Item removed</string>
+    <string name="dialog_add_item">Item added</string>
+    <string name="dialog_action">Action</string>
+    <string name="fab_description">TODO</string>
 </resources>
