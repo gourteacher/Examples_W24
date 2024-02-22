@@ -23,7 +23,7 @@ public class ListViewAdapter extends BaseAdapter {
     }
     public int getCount() { return messages.size();}
 
-    public Object getItem(int position) { return "This is row " + position; }
+    public Object getItem(int position) { return messages.get(position); }
 
     public long getItemId(int position) { return position; }
 
