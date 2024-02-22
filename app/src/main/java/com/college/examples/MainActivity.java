@@ -1,25 +1,58 @@
 package com.college.examples;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
-import com.college.examples.databinding.ActivityMainBinding;
+import androidx.fragment.app.FragmentTransaction;
+
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     *
-      * @param savedInstanceState If the activity is being re-initialized after
-     *     previously being shut down then this Bundle contains the data it most
-     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
-     */
+    static final String TAG = MainActivity.class.getSimpleName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        Button btn1 = findViewById(R.id.switch_id);
 
-        setContentView(binding.getRoot());
+        btn1.setOnClickListener( c -> {
 
-     }
+            DetailFragment detailFragment = new DetailFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fl1, detailFragment);
+            ft.commit();
+        } );
 
 
+        Button btn2 = findViewById(R.id.switch_id2);
+
+        btn2.setOnClickListener( c -> {
+
+            ListingFragment listingFragment = new ListingFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fl1, listingFragment);
+            ft.commit();
+        } );
+
+
+        Button btn3 = findViewById(R.id.switch_id3);
+
+        btn3.setOnClickListener( c -> {
+
+            LoginFragment loginFragment = new LoginFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.fl1, loginFragment);
+            ft.commit();
+        } );
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Log.i(TAG, "onStart");
+    }
 }

@@ -1,6 +1,12 @@
 <resources>
-    <string name="app_name">Examples</string>
-    <string name="welcome_msg">Hello World</string>
+    <string name="app_name">Examples - Simple Fragment Example</string>
+    <string name="hello_detail_fragment">Hello Detail fragment</string>
+    <string name="hello_login_fragment">Login fragment</string>
+    <string name="hello_listing_fragment">Hello Listing fragment</string>
+    <string name="detail">Detail</string>
+    <string name="listview">ListView</string>
+    <string name="login">Login</string>
+    <string name="detail_button">DETAIL</string>
 
 
 </resources>
