@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:orientation="vertical"
+    app:layout_anchorGravity="center"
+    tools:context=".SuperFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/super_fragment" />
+
+    <Button
+        android:id="@+id/super_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/movetonext" />
+
+    <Button
+        android:id="@+id/animate_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/animate_button" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="162dp"
+        android:background="#8E24AA"
+        android:fontFamily="sans-serif-light"
+        android:textAlignment="center"
+        android:textColor="@color/light_blue_A200"
+        android:textSize="24sp" />
+
+</LinearLayout>
