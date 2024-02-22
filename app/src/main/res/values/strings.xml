@@ -3,6 +3,6 @@
     <string name="send">Send</string>
     <string name="dialog_remove_item">Item removed</string>
     <string name="dialog_add_item">Item added</string>
-    <string name="dialog_action">Action</string>
+    <string name="dialog_action">UNDO</string>
     <string name="fab_description">TODO</string>
 </resources>

@@ -48,8 +48,7 @@ public class FirstActivity extends AppCompatActivity {
             addListItem();
             Snackbar.make(view, R.string.dialog_add_item,
                             Snackbar.LENGTH_LONG)
-                    .setAction(R.string.dialog_action, null).show();
-            //.setAction("Undo", undo).show();
+                    .setAction(R.string.dialog_action, undo).show();
         });
 
     }
