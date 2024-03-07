@@ -1,12 +1,7 @@
 <resources>
-    <string name="app_name">Examples - Toolbar</string>
+    <string name="app_name">Examples - Options Menu</string>
     <string name="red_color">Red</string>
     <string name="yellow_color">Yellow</string>
     <string name="blue_color">Blue</string>
     <string name="green_color">Green</string>
-
-    <string name="toolbar_title">Toolbar Example</string>
-    <string name="toolbar_subtitle">A New Theme</string>
-
-
 </resources>
