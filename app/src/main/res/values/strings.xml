@@ -1,7 +1,12 @@
 <resources>
-    <string name="app_name">Examples - Options Menu</string>
-    <string name="red_color">Red</string>
-    <string name="yellow_color">Yellow</string>
-    <string name="blue_color">Blue</string>
-    <string name="green_color">Green</string>
+    <string name="app_name">Examples - Networking</string>
+    <string name="name_city">Enter name of a city</string>
+    <string name="city_name">City Name</string>
+    <string name="button_forecast">Get Forecast</string>
+    <string name="current_temperature">Current Temperature</string>
+    <string name="min_temperature">Min Temperature</string>
+    <string name="max_temperature">Max Temperature</string>
+    <string name="weather_icon">Weather Icon</string>
+    <string name="error_msg">Please enter the name of a valid city</string>
+
 </resources>
