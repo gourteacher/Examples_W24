@@ -41,23 +41,28 @@ public class FirstActivity extends AppCompatActivity  {
             {
                 String message = null;
 
-                switch(item.getItemId())
-                {
-                    case R.id.share_item:
-                        message = "You clicked on share";
-                        break;
-                    case R.id.app_bar_search:
-                        message = "You clicked on the search";
-                        break;
-                    case R.id.video_item:
-                        message = "You clicked on video";
-                        break;
-                    case R.id.mail_item:
-                        message = "You clicked on mail";
-                        break;
-                    case R.id.call_item:
-                        message = "You clicked on call";
-                        break;
+                int item_id = item.getItemId();
+
+                //what to do when the menu item is selected:
+                if (item_id  == R.id.clear_item ) {
+                    message = getString(R.string.clear_message);
+                }
+                else if (item_id  == R.id.search_item) {
+                    message = getString(R.string.search_message);
+                }
+                else if ( item_id == R.id.help_item) {
+                    message = getString(R.string.help_message);
+                }
+                else if ( item_id  == R.id.mail_item) {
+                    message = getString(R.string.email_message);
+                }
+                else if ( item_id == R.id.video_item) {
+                    message = getString(R.string.video_message);
+                }
+                else if ( item_id  == R.id.call_item) {
+                    message = getString(R.string.call_message);
+                    Intent i = new Intent(getApplicationContext(), SomeActivity.class);
+                    startActivity(i);
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
