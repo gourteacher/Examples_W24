@@ -44,14 +44,11 @@ public class FirstActivity extends AppCompatActivity  {
                 int item_id = item.getItemId();
 
                 //what to do when the menu item is selected:
-                if (item_id  == R.id.clear_item ) {
-                    message = getString(R.string.clear_message);
+                if (item_id  == R.id.share_item ) {
+                    message = getString(R.string.share_message);
                 }
-                else if (item_id  == R.id.search_item) {
+                else if (item_id  == R.id.app_bar_search) {
                     message = getString(R.string.search_message);
-                }
-                else if ( item_id == R.id.help_item) {
-                    message = getString(R.string.help_message);
                 }
                 else if ( item_id  == R.id.mail_item) {
                     message = getString(R.string.email_message);
@@ -61,14 +58,12 @@ public class FirstActivity extends AppCompatActivity  {
                 }
                 else if ( item_id  == R.id.call_item) {
                     message = getString(R.string.call_message);
-                    Intent i = new Intent(getApplicationContext(), SomeActivity.class);
-                    startActivity(i);
                 }
 
                 drawerLayout.closeDrawer(GravityCompat.START);
 
                 if ( message != null ) {
-                    Toast.makeText(this, "NavigationDrawer: " + message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(this,  R.string.navigation_title +  message, Toast.LENGTH_LONG).show();
                 }
                 return false ;
             }
@@ -89,30 +84,29 @@ public class FirstActivity extends AppCompatActivity  {
 
         View v = findViewById(R.id.my_rectangle);
 
-        switch(id) {
-            case R.id.red_id:
-                v.setBackgroundColor(Color.RED);
-                break;
+        int item_id = item.getItemId();
 
-            case R.id.blue_id:
-                v.setBackgroundColor(Color.BLUE);
-                break;
-
-            case R.id.green_id:
-                v.setBackgroundColor(Color.GREEN);
-                break;
-
-            case R.id.yellow_id:
-                v.setBackgroundColor(Color.YELLOW);
-                break;
-
-            case R.id.move_to_next:
-                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
-                startActivity(intent);
-                break;
-            default:
-                break;
+        if ( R.id.red_id == item_id ) {
+            v.setBackgroundColor(Color.RED);
         }
+
+        else if ( R.id.blue_id == item_id ) {
+            v.setBackgroundColor(Color.BLUE);
+        }
+
+        else if ( R.id.green_id == item_id ) {
+            v.setBackgroundColor(Color.GREEN);
+        }
+
+        else if ( R.id.yellow_id == item_id ) {
+            v.setBackgroundColor(Color.YELLOW);
+        }
+
+        else if ( R.id.move_to_next == item_id ) {
+            Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+            startActivity(intent);
+        }
+
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         drawerLayout.closeDrawer(GravityCompat.START);

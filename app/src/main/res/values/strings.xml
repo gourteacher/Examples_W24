@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Examples - Navigation Drawer</string>
+    <string name="share_message">You clicked on share</string>
+    <string name="help_message">You clicked on help</string>
+    <string name="search_message">You clicked on search</string>
+    <string name="email_message">You clicked on email</string>
+    <string name="video_message">You clicked on video</string>
+    <string name="call_message">You clicked on call</string>
+
     <string name="red_color">Red</string>
     <string name="yellow_color">Yellow</string>
     <string name="blue_color">Blue</string>
@@ -20,5 +27,8 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="search">Search</string>
+
+    <string name="navigation_title">NavigationDrawer: </string>
+
     <string name="hello_drawer">This is the Drawer Layout!</string>
 </resources>
