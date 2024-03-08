@@ -13,7 +13,7 @@ public class SomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_some);
 
         //This gets the toolbar from the layout:
-        Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar tBar = findViewById(R.id.toolbar);
         setSupportActionBar(tBar);
 
         getSupportActionBar().setTitle(R.string.some_activity_title);

@@ -18,7 +18,7 @@ public class MenuExample extends AppCompatActivity {
         setContentView(R.layout.activity_menu_example);
 
         //This gets the toolbar from the layout:
-        Toolbar tBar = (Toolbar)findViewById(R.id.toolbar);
+        Toolbar tBar = findViewById(R.id.toolbar);
         setSupportActionBar(tBar);
     }
 
