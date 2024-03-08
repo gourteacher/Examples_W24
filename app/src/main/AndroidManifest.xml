@@ -13,11 +13,11 @@
         android:theme="@style/Theme.NoToolbar"
         tools:targetApi="31" >
         <activity
-            android:name=".SomeActivity"
-            android:parentActivityName=".MenuExample"
+            android:name=".SecondActivity"
+            android:parentActivityName=".FirstActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuExample"
+            android:name=".FirstActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
