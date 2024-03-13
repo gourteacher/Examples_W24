@@ -1,15 +1,10 @@
 <resources>
     <string name="app_name">Examples - Bottom Navigation</string>
-    <string name="red_color">Red</string>
-    <string name="yellow_color">Yellow</string>
-    <string name="blue_color">Blue</string>
-    <string name="green_color">Green</string>
-
     <string name="move_to_next">Next Activity</string>
     <string name="second_activity">Second Activity</string>
     <string name="third_activity">Third Activity</string>
-
     <string name="home">Home</string>
     <string name="second">Second</string>
     <string name="third">Third</string>
+    <string name="first_activity">First Activity</string>
 </resources>
