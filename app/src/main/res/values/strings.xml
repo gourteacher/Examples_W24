@@ -1,34 +1,15 @@
 <resources>
-    <string name="app_name">Examples - Navigation Drawer</string>
-    <string name="share_message">You clicked on share</string>
-    <string name="help_message">You clicked on help</string>
-    <string name="search_message">You clicked on search</string>
-    <string name="email_message">You clicked on email</string>
-    <string name="video_message">You clicked on video</string>
-    <string name="call_message">You clicked on call</string>
-
+    <string name="app_name">Examples - Bottom Navigation</string>
     <string name="red_color">Red</string>
     <string name="yellow_color">Yellow</string>
     <string name="blue_color">Blue</string>
     <string name="green_color">Green</string>
 
-    <string name="toolbar_title">Toolbar Example</string>
-    <string name="toolbar_subtitle">A New Theme</string>
     <string name="move_to_next">Next Activity</string>
     <string name="second_activity">Second Activity</string>
+    <string name="third_activity">Third Activity</string>
 
-    <string name="communications">Communications</string>
-    <string name="help">Help</string>
-    <string name="mail">Mail</string>
-    <string name="call">Call</string>
-    <string name="video">Video</string>
-    <string name="support">Support</string>
-    <string name="share">Share</string>
-    <string name="open">Open</string>
-    <string name="close">Close</string>
-    <string name="search">Search</string>
-
-    <string name="navigation_title">NavigationDrawer: </string>
-
-    <string name="hello_drawer">This is the Drawer Layout!</string>
+    <string name="home">Home</string>
+    <string name="second">Second</string>
+    <string name="third">Third</string>
 </resources>

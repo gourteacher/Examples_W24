@@ -1,10 +1,11 @@
 package com.college.examples;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -13,17 +14,25 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        //This gets the toolbar from the layout:
-        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        toolbar.setTitle(R.string.second_activity);
+        bottomNavigationView.setSelectedItemId(R.id.second_id);
 
-
-        // Here we need the Action Bar
-        ActionBar myBar = getSupportActionBar();
-        myBar.setDisplayHomeAsUpEnabled(true);
-
+        // Perform item selected listener
+        bottomNavigationView.setOnItemSelectedListener(item ->
+            {
+                int item_id = item.getItemId();
+                if ( item_id == R.id.home_id ) {
+                    startActivity(new Intent(getApplicationContext(), FirstActivity.class));
+                } else if ( item_id == R.id.second_id ) {
+                    return true;
+                } else if ( item_id == R.id.third_id ) {
+                    startActivity(new Intent(getApplicationContext(), ThirdActivity.class));
+                    return true;
+                }
+                return false;
+            }
+        );
 
     }
 }
