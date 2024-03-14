@@ -1,5 +1,6 @@
 package com.college.examples;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
@@ -11,13 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-
 public class FirstActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView( R.layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle(R.string.toolbar_title); // set the Name
@@ -54,7 +54,13 @@ public class FirstActivity extends AppCompatActivity {
         else if (id == R.id.yellow_id) {
             v.setBackgroundColor(Color.YELLOW);
         }
+        else if ( id == R.id.move_to_next) {
+            Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
+
 }
 

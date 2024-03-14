@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
 
     <item
@@ -17,4 +18,9 @@
     <item
         android:id="@+id/green_id"
         android:title="@string/green_color" />
+    <item
+        android:id="@+id/move_to_next"
+        android:icon="@android:drawable/ic_media_play"
+        android:title="@string/move_to_next"
+        app:showAsAction="always" />
 </menu>

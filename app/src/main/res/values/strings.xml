@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Examples - Toolbar</string>
+    <string name="app_name">Examples - Up Navigation</string>
     <string name="red_color">Red</string>
     <string name="yellow_color">Yellow</string>
     <string name="blue_color">Blue</string>
@@ -7,6 +7,7 @@
 
     <string name="toolbar_title">Toolbar Example</string>
     <string name="toolbar_subtitle">A New Theme</string>
-
+    <string name="move_to_next">Next Activity</string>
+    <string name="second_activity">Second Activity</string>
 
 </resources>
