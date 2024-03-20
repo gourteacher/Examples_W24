@@ -1,12 +1,7 @@
 <resources>
     <string name="app_name">Examples - Networking</string>
-    <string name="name_city">Enter name of a city</string>
-    <string name="city_name">City Name</string>
-    <string name="button_forecast">Get Forecast</string>
-    <string name="current_temperature">Current Temperature</string>
-    <string name="min_temperature">Min Temperature</string>
-    <string name="max_temperature">Max Temperature</string>
-    <string name="weather_icon">Weather Icon</string>
-    <string name="error_msg">Please enter the name of a valid city</string>
-
+    <string name="button_getdata">Get Data</string>
+    <string name="response_msg">Response is : %1$s </string>
+    <string name="error_msg">That didn\'t work!</string>
+    <string name="clear_button">Clear</string>
 </resources>

@@ -1,88 +1,66 @@
 package com.college.examples;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.college.examples.databinding.ActivityMainBinding;
-import com.google.android.material.snackbar.Snackbar;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.net.URLEncoder;
-import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = getClass().getSimpleName();
+    private static final String URL_TAG = "GOOGLE_TAG";
 
-    //Replace it with your own key or the one provided in Brightspace
-    private final String MY_KEY = "YOUR_KEY_HERE"; 
-    private final String URL_REQUEST_DATA = "https://api.openweathermap.org/data/2.5/weather?q=";
-    private final String URL_API_PARAM = "&appid=" + MY_KEY +  "&units=metric";
+    private static final String URL_GOOGLE = "https://www.google.com";
+    private RequestQueue queue;
 
-    protected String cityName;
-    protected RequestQueue queue;
-
+    ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        ActivityMainBinding binding = ActivityMainBinding.inflate( getLayoutInflater() );
+        binding = ActivityMainBinding.inflate( getLayoutInflater() );
         setContentView(binding.getRoot());
 
+        // Instantiate the RequestQueue.
         queue = Volley.newRequestQueue(this);
+        String my_url = URL_GOOGLE;
 
-        binding.forecastButton.setOnClickListener(click -> {
-            cityName = binding.editText.getText().toString();
-
-            try {
-                if (!cityName.isEmpty()) {
-
-                    String url = URL_REQUEST_DATA + URLEncoder.encode(cityName, "UTF-8") + URL_API_PARAM;
-
-                    //this goes in the button click handler:
-                    JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null,
-                            (response) -> {
-                                try {
-                                    JSONObject coord = response.getJSONObject("coord");
-                                    JSONArray weatherArray = response.getJSONArray("weather");
-                                    JSONObject position0 = weatherArray.getJSONObject(0);
-                                    String description = position0.getString("description");
-
-                                    JSONObject mainObject = response.getJSONObject("main");
-                                    double current = mainObject.getDouble("temp");
-                                    double min = mainObject.getDouble("temp_min");
-                                    double max = mainObject.getDouble("temp_max");
-
-                                    binding.tvDescription.setText(description);
-                                    binding.tvCurrentVal.setText(String.format(Locale.CANADA, "%.1f°", current));
-                                    binding.tvMinVal.setText(String.format(Locale.CANADA, "%.1f°", min));
-                                    binding.tvMaxVal.setText(String.format(Locale.CANADA, "%.1f°", max));
-
-                                } catch (Exception e) {
-                                    e.printStackTrace();
-                                }
-                            },
-                            (error) -> {
-                                Log.e(TAG, "Error:" + error.getMessage());
-                                Snackbar.make(click, R.string.error_msg, Toast.LENGTH_SHORT).show();
-                            });
-                    queue.add(request);
-                } else {
-                    Snackbar.make(click, R.string.error_msg, Snackbar.LENGTH_SHORT).show();
-                }
-            }
-            catch (Exception e) {
-                Log.e(TAG, "Error encoding city name");
-            }
+        binding.fetchButton.setOnClickListener(v -> {
+            fetchGoogle(my_url);
         });
+
+        binding.clearButton.setOnClickListener(v -> {
+            binding.theText.setText("");
+        });
+    }
+
+    private void fetchGoogle(String url) {
+        // Request a string response from the provided URL.
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                response -> {
+                    // Display the first 500 characters of the response string.
+                    binding.theText.setText(getString(R.string.response_msg, response.substring(0,500)));
+                },
+                error -> binding.theText.setText(R.string. error_msg)
+        );
+        // Add TAG to request
+        stringRequest.setTag(URL_TAG);
+
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
+
+    }
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (queue != null) {
+            queue.cancelAll(URL_TAG);
+            queue.stop();
+        }
     }
 }
