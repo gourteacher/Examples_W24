@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.cst3104.samples.LoginFragment"
+        android:name="com.college.examples.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/blankFragment"
-        android:name="com.cst3104.samples.BlankFragment"
+        android:name="com.college.examples.BlankFragment"
         android:label="fragment_blank"
         tools:layout="@layout/fragment_blank" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/superFragment"
-        android:name="com.cst3104.samples.SuperFragment"
+        android:name="com.college.examples.SuperFragment"
         android:label="fragment_super"
         tools:layout="@layout/fragment_super" >
         <action

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Examples</string>
+    <string name="app_name">Examples - Fragment Navigation</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -10,4 +10,6 @@
     <string name="login_failed">"Login failed"</string>
     <string name="movetonext">movetonext</string>
     <string name="animate_button">Animate</string>
+    <string name="super_fragment">Super fragment</string>
+    <string name="blank_fragment">Blank fragment</string>
 </resources>
